@@ -22,7 +22,7 @@ promotionRouter.route('/')
         res.setHeader('Content-Type', 'application/json');
         res.json(promotion);
     })
-    .catch(err =? next(err));
+    .catch(err => next(err));
 })
 .put(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
