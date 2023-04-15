@@ -27,8 +27,7 @@ favoriteRouter.route("/")
               userFavorites.push(favorite._id);
             }
           });
-          favorite
-            .save()
+          favorite.save()
             .then((favorite) => {
               res.statusCode = 200;
               res.setHeader("Content-Type", "application/json");
@@ -86,7 +85,7 @@ favoriteRouter.route("/:campsiteId")
           Favorite.campsites.push(req.params.campsiteId);
           favorite.save()
             .then((favorite) => {
-              console.log("favorite Created", favorite);S
+              console.log("favorite Created", favorite);
               favorite.favorites.push({ _id: `${req.params.campsiteId}` });
               res.statusCode = 200;
               res.setHeader("Content-Type", "application/json");
